@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en"ng-app="sketch">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="angular.js"></script>
+	<link rel="stylesheet" type="text/css" href="css/index.css">
+	<script src="js/index.js"></script>
+</head>
+<body ng-controller="sketchcontroller">
+<div id="controls">
+<div>
+	<div ng-repeat="(key, value) in tools"ng-click="settool(value)"ng-class="{active:value==tool}">
+		<span>{{key}}</span>
+	</div>
+</div>
+<hr>
+<!-- <div ng-class="{active:csState.style=='fill'}"ng-click="setStyle('fill')">填充</div>
+<input type="color"ng-model="csState.fillStyle">
+<div ng-class="{active:csState.style=='stroke'}"ng-click="setStyle('stroke')">画线</div>
+<input type="color"ng-model="csState.strokeStyle"><br>
+线宽度<input ng-model="csState.lineWidth"type="range"min="0.5"max="10"step="1" ng-change="console()"> -->
+<div ng-class="{active:csState.style == 'fill'}" ng-click="setStyle('fill')">填充</div>
+		<input type="color" ng-model="csState.fillStyle">
+		<div ng-class="{active:csState.style == 'stroke'}" ng-click="setStyle('stroke')">画线</div>
+		<input type="color" ng-model="csState.strokeStyle">
+		<div>线宽度</div>
+		<input type="range" min="1" max="10" step="1" ng-model="csState.lineWidth" ng-change="console()">
+		<hr>
+
+<div ng-click="newSketch()">新建</div>
+<a ng-click="save($event)">保存</a>
+<div>回退</div>
+<hr>
+	<input ng-model="canvasWH.width"type="range"min="400"max="800"step="1">
+	<input ng-model="canvasWH.height"type="range"min="400"max="800"step="1">
+</div>
+<div id="drawregion">
+	<canvas id="canvas" width="{{canvasWH.width}}"height="{{canvasWH.height}}"></canvas>
+</div>
+</body>
+
+</html>

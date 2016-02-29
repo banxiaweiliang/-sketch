@@ -1,0 +1,45 @@
+
+#controls{
+	width: 250px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0px;
+	background: #222;
+   padding-left: 50px;
+   border: 1px solid #222;
+}
+#drawregion{
+	position: absolute;
+	left: 300px;
+	right: 0;
+	top: 0;
+	bottom: 0;
+}
+#canvas{
+	margin:0 auto; 
+	border: 1px solid black;
+	margin-left: 50px;
+	margin-top: 50px;
+}
+ul li{
+	color: white;
+}
+.active{
+	color:orange;
+}
+*{
+	cursor: pointer;
+}
+div{
+	color: white;
+
+line-height: 25px;
+
+}
+ul{
+	list-style: none;
+}
+body{
+	background:url(packed-4.png); 
+}
